@@ -10,22 +10,35 @@ body {
     color: #222;
 } 
 
+.logo {
+}
+
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
     padding: 20px 60px;
+    background: #ccc;
+    border-bottom: 1px solid#222;
 }
 
 nav {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
 nav a {
     text-decoration: none;
     color: #222;
+    transition: 0.3s;
+    padding: 2px 2px;
+}
+
+nav a:hover {
+    background: #222;
+    color: white;
+    border-radius: 7px;
+    transform: scale(1.05);
 }
 
 main {
@@ -33,7 +46,22 @@ main {
 }
 
 section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+#containertexto{
     max-width: 600px;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
 }
 
 h2 {
@@ -50,8 +78,43 @@ p {
 
 button {
     padding: 12px 20px;
-
     border: none;
-
     cursor: pointer;
+    border-radius: 15px;
+}
+
+.btn-primary {
+    background: #555;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background: #e2e2e2;
+    border: 1px solid rgb(192, 169, 169);
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #ccc;
+    border-radius: 15px;
+    padding: 20px 20px 10px 20px;
+    box-shadow: 1px 2px 0 rgb(0, 0, 0, 0.2);
+    transform: translateY(10px);
+    transition: 0.3s;
+
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 1px 2px 0 rgb(0, 0, .6);
+}
+
+@media query() {
+
 }
