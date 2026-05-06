@@ -8,17 +8,29 @@ body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
     color: #222;
+    background: #f8f5f2;
 } 
 
 .logo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #3b2a1f;
+    cursor: pointer;
+
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     padding: 20px 60px;
-    background: #ccc;
-    border-bottom: 1px solid#222;
+
+    background: white;
+
+    position: sticky;
+    top: 0;
 }
 
 nav {
@@ -41,16 +53,45 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-main {
-    padding: 80px 60px;
+.btn-primary {
+    background: #5c3d2e;
+    color: #fff;
+    transition: 0.3s;
+
+    font-weight: bold;
 }
 
-section {
+.btn-primary:hover {
+    background: #3b2a1f;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #5c3d2e;
+    color: #5c3d2e;
+
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #5c3d2e;
+    color: white;
+}
+
+main {
+    padding: 80px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    min-height: 80vh;
+    gap: 40px;
+    min-height: 100vh;
     flex-wrap: wrap;
 }
 
@@ -58,10 +99,106 @@ section {
     max-width: 600px;
 }
 
-img {
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    width: 250px;
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.depoimentos {
+    text-align: center;
+}
+
+.depoimentos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 50px;
+}
+
+.depoimento {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    width: 300px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.depoimento:hover {
+    transform: translateY(-8px);
+}
+
+.depoimento h4 {
+    margin-top: 20px;
+
+    color: #5c3d2e;
+}
+
+section {
+    margin-bottom: 120px;
+}
+
+.sobre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    
+    flex-direction: column;
+    text-align: center;
+    
+    margin-top: 120px;
+}
+
+.sobre-texto {
+    max-width: 700px;
+}
+
+.sobre-texto p{
+    font-size: 22px;
+}
+
+.sobre img {
     width: 100%;
     max-width: 400px;
     border-radius: 20px;
+}
+
+.sobre-imagem {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+}
+section.diferenciais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -94,27 +231,7 @@ button {
     border: 1px solid rgb(192, 169, 169);
 }
 
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #ccc;
-    border-radius: 15px;
-    padding: 20px 20px 10px 20px;
-    box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
-    /* transform: translateY(10px); */
-    transition: 0.3s;
-
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 1px 2px 0 rgba(0, 0, 0, .6);
-}
-
+    
 @media(max-width: 768px) {
 
     header {
@@ -144,7 +261,7 @@ button {
         min-height: 40px;
     }
 
-    section {
+    .hero {
         flex-direction: column;
         
     }
