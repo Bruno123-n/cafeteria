@@ -99,6 +99,12 @@ main {
     max-width: 600px;
 }
 
+section.diferenciais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .cards {
     display: flex;
     gap: 20px;
@@ -195,11 +201,6 @@ section {
     max-width: 550px;
     border-radius: 20px;
 }
-section.diferenciais{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 h2 {
     font-size: 48px;
@@ -231,7 +232,6 @@ button {
     border: 1px solid rgb(192, 169, 169);
 }
 
-    
 @media(max-width: 768px) {
 
     header {
