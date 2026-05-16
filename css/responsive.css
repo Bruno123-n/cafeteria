@@ -75,4 +75,12 @@
         margin-bottom: 80px;
     }
 
+    .cta-final {
+        padding: 60px 20px;
+    }
+
+    .cta-final h2 {
+        font-size: 38px;
+    }
+
 }

@@ -1,0 +1,46 @@
+.cta-final {
+    padding: 100px 40px;
+
+    border-radius: 30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #1b1b1b,
+        #2a1d17
+    );
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.cta-conteudo {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.cta-final h2 {
+    font-size: 56px;
+
+    margin: 30px 0;
+}
+
+.cta-final p {
+    font-size: 20px;
+
+    color: #d4d4d4;
+
+    margin-bottom: 40px;
+}
+
+.cta-final .btn-primary {
+    padding: 16px 34px;
+
+    font-size: 18px;
+}
