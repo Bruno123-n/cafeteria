@@ -136,3 +136,9 @@ html {
     }
 
 }
+
+.card,
+.item-galeria {
+    position: relative;
+    z-index: 1;
+}

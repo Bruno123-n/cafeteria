@@ -20,15 +20,19 @@ header {
 
     border-bottom: 1px solid rgba(255,255,255,0.05);
 
-    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    backdrop-filter: blur(18px);
 
     padding: 20px 60px;
 
-    background: rgba(17,17,17,0.85);
+    background: rgba(10,10,10,0.7);
 
     position: sticky;
 
     top: 0;
+
+    z-index: 1000;
 }
 
 nav {
@@ -47,14 +51,36 @@ nav a {
     transition: 0.3s;
 
     padding: 2px 2px;
+
+    font-weight: 500;
+
+    position: relative;
 }
 
 nav a:hover {
-    background: var(--cor-primaria);
-
-    color: white;
-
-    border-radius: 7px;
+    color: var(--cor-secundaria);
 
     transform: scale(1.05);
+}
+
+nav a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: var(--cor-secundaria);
+
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
