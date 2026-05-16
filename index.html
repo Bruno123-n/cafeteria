@@ -15,13 +15,13 @@
                         
         <nav>
 
-            <a href="#">Início</a>
+            <a href="#inicio">Início</a>
             
-            <a href="#">Sobre</a>
+            <a href="#sobre">Sobre</a>
             
-            <a href="#">Diferenciais</a>
+            <a href="#diferenciais">Diferenciais</a>
             
-            <a href="#">Depoimentos</a>
+            <a href="#depoimentos">Depoimentos</a>
             
             <a href="#">Contato</a>
             
@@ -31,8 +31,11 @@
 
         <main>
             
-            <section class="hero">
-                <div id="hero">
+            <section id="inicio" class="hero">
+                <div id="hero" class="hero-texto">
+                     <span class="tag">
+                        Café Artesanal Premium
+                    </span>
                     <h2>
                         O sabor perfeito para   começar o seu dia
                     </h2>
@@ -42,16 +45,18 @@
                         e um ambiente acolhedor para momentos únicos.
                     </p>
 
-                    <button id="Cardapio" class="btn-primary">Cardápio </button>
-                    <button id="reservar" class="btn-secondary">Reservar </button>
+                    <div class="hero-botoes">
+                        <button id="Cardapio" class="btn-primary">Cardápio </button>
+                        <button id="reservar" class="btn-secondary">Reservar </button>
+                    </div>
                 </div>
-                <div>
-                    <img src="./imagens/photo-1743389412243-7dbfdf6c48dd.avif" alt="Um bom café e tomado quente e fresco ">
+                <div class="hero-imagem">
+                    <img src="./imagens/photo-1743389412243-7dbfdf6c48dd.avif" alt="Café artesanal servido quente">
                 </div>
                 
             </section>
 
-            <section class="diferenciais">
+            <section id="diferenciais" class="diferenciais">
 
                 <h2>
                     Nossos Diferenciais
@@ -82,7 +87,7 @@
                 </div>
             </section>
 
-            <section class="depoimentos">
+            <section id="depoimentos" class="depoimentos">
 
                 <h2>O que nossos clientes dizem</h2>
 
@@ -116,7 +121,7 @@
 
             </section>
 
-            <section class="sobre">
+            <section id="sobre" class="sobre">
 
                 <div class="sobre-texto">
                     <h2>Sobre Nós</h2>
@@ -132,6 +137,52 @@
 
                 <div class="sobre-imagem">
                     <img src="imagens/download.jpg" alt="">
+                </div>
+
+            </section>
+
+            <section class="especiais">
+
+                <h2>Nossos Especiais</h2>
+
+                <div class="galeria">
+
+                    <div class="item-galeria">
+                        <img src="imagens/download (1).jpg" alt="">
+
+                        <div class="info-galeria">
+                            <h3>Capuccino Cremoso</h3>
+
+                            <p>
+                                Café artesanal com espuma cremosa e toque especial.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="imagens/image..jpg" alt="">
+
+                        <div class="info-galeria">
+                            <h3>Expresso Premium</h3>
+
+                            <p>
+                                Grãos selecionados torrados artesanalmente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item-galeria">
+                        <img src="imagens/images.jpg" alt="">
+
+                        <div class="info-galeria">
+                            <h3>Ambiente Exclusivo</h3>
+
+                            <p>
+                                Um espaço sofisticado para momentos especiais.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
             </section>

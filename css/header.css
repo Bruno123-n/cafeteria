@@ -1,0 +1,60 @@
+.logo {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: var(--cor-secundaria);
+
+    cursor: pointer;
+
+}
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
+
+    padding: 20px 60px;
+
+    background: rgba(17,17,17,0.85);
+
+    position: sticky;
+
+    top: 0;
+}
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+
+    color: var(--cor-texto);
+
+    transition: 0.3s;
+
+    padding: 2px 2px;
+}
+
+nav a:hover {
+    background: var(--cor-primaria);
+
+    color: white;
+
+    border-radius: 7px;
+
+    transform: scale(1.05);
+}

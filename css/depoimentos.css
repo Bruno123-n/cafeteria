@@ -1,0 +1,39 @@
+.depoimentos {
+    text-align: center;
+}
+
+.depoimentos-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 50px;
+}
+
+.depoimento {
+    background: #1c1c1c;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    width: 300px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.depoimento:hover {
+    transform: translateY(-8px);
+}
+
+.depoimento h4 {
+    margin-top: 20px;
+
+    color: #5c3d2e;
+}

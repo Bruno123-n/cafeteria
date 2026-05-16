@@ -1,0 +1,50 @@
+@media(max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 3px;
+
+        margin-bottom: 40px;
+    }
+
+    nav {
+        flex-direction: column;
+
+        column-gap: 5px;
+
+        text-align: center;
+
+    }
+
+    h1.logo{
+        min-width: 40px;
+
+        width: 100px;
+
+        padding-bottom: 20px;
+
+        text-align: center;
+
+        font-size: 18px;
+        
+    }
+
+    button {
+        min-height: 40px;
+    }
+
+    .hero {
+        flex-direction: column;
+        
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    
+
+}
