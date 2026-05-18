@@ -12,17 +12,48 @@
         padding: 20px;
     }
 
+        /* flex-wrap: wrap; */
+/* 
+        justify-content: center; */
+
+        /* gap: 15px; */
+
+        /* text-align: center; */
+
     nav {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(10,10,10,0.98);
+
+        backdrop-filter: blur(20px);
+
         flex-direction: column;
 
-        flex-wrap: wrap;
+        padding: 30px;
 
-        justify-content: center;
+        transform: translateY(-20px);
 
-        gap: 15px;
+        opacity: 0;
 
-        text-align: center;
+        pointer-events: none;
 
+        transition: 0.3s ease;
+    }
+
+    nav.active {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+        pointer-events: all;
     }
 
     h1.logo{
@@ -82,5 +113,16 @@
     .cta-final h2 {
         font-size: 38px;
     }
+
+    .menu-mobile {
+        display: flex;
+        }
+
+    .footer {
+
+        padding: 60px 20px 30px;
+    }
+
+    
 
 }

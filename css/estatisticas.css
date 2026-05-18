@@ -1,0 +1,49 @@
+.estatisticas {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.estatistica {
+
+    background: #1b1b1b;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    border-radius: 20px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.estatistica:hover {
+
+    transform: translateY(-8px);
+
+    border-color:
+    rgba(214,185,140,0.3);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.35);
+}
+
+.estatistica h3 {
+
+    font-size: 52px;
+
+    color: var(--cor-secundaria);
+
+    margin-bottom: 15px;
+}
+
+.estatistica p {
+
+    color: #cfcfcf;
+}
