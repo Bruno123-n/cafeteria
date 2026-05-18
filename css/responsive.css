@@ -20,40 +20,28 @@
 
         /* text-align: center; */
 
+
     nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
 
-        position: absolute;
+        width: 250px;
+        height: 100vh;
 
-        top: 100%;
-
-        left: 0;
-
-        width: 100%;
-
-        background: rgba(10,10,10,0.98);
-
-        backdrop-filter: blur(20px);
+        background: #111;
 
         flex-direction: column;
 
-        padding: 30px;
-
-        transform: translateY(-20px);
-
-        opacity: 0;
-
-        pointer-events: none;
+        padding-top: 100px;
 
         transition: 0.3s ease;
+
+        z-index: 999;
     }
 
     nav.active {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-        pointer-events: all;
+        right: 0;
     }
 
     h1.logo{
@@ -114,15 +102,51 @@
         font-size: 38px;
     }
 
-    .menu-mobile {
-        display: flex;
-        }
-
     .footer {
 
         padding: 60px 20px 30px;
     }
 
-    
+    .menuToggle {
+        position: relative;
+        width: 30px;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        z-index: 1001;
+    }
+
+    .menuToggle span {
+        width: 100%;
+        height: 3px;
+
+        background: white;
+
+        transition: 0.3s;
+    }
+
+    .menuToggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menuToggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menuToggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .no-scroll {
+        overflow: hidden;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
 }

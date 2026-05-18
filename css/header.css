@@ -111,23 +111,5 @@ nav a.active::after {
     width: 100%;
 }
 
-.menu-mobile {
-    display: none;
 
-    flex-direction: column;
-
-    gap: 6px;
-
-    cursor: pointer;
-}
-
-.menu-mobile span {
-    width: 28px;
-
-    height: 2px;
-
-    background: var(--cor-texto);
-
-    transition: 0.3s ease;
-}
 

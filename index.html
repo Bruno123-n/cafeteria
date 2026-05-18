@@ -7,28 +7,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="loader">
+
+        <div class="coffee-loader"></div>
+
+    </div>
+
     
     <header>
         <h1 class="logo">
             Café Vittale
         </h1>
-
-        <div class="menu-mobile">
-
+        
+        <div id="menuToggle" class="menuToggle">
+            
             <span></span>
             <span></span>
             <span></span>
-
+            
         </div>
-                        
-        <nav>
-
+        
+        <nav id="menu">
+            
             <a href="#inicio">Início</a>
             
             <a href="#sobre">Sobre</a>
             
             <a href="#diferenciais">Diferenciais</a>
-
+            
             <a href="#especiais">Especiais</a>
             
             <a href="#depoimentos">Depoimentos</a>
@@ -36,6 +42,8 @@
             <a href="#contato">Contato</a>
             
         </nav>
+
+        <div id="overlay" class="overlay"></div>
 
     </header>
 
@@ -321,6 +329,7 @@
     <script src="js/menu.js"></script>
     <script src="js/activeMenu.js"></script>
     <script src="js/headerScroll.js"></script>
+    <script src="js/loader.js"></script>
     
 </body>
 </html>
