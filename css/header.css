@@ -35,6 +35,22 @@ header {
     z-index: 1000;
 }
 
+header.scrolled {
+
+    padding: 14px 60px;
+
+    background: rgba(5,5,5,0.92);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+
+    transition:
+        padding 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
 nav {
     display: flex;
 
@@ -85,6 +101,16 @@ nav a:hover::after {
     width: 100%;
 }
 
+
+nav a.active {
+    
+    color: var(--cor-secundaria);
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
 .menu-mobile {
     display: none;
 
@@ -104,3 +130,4 @@ nav a:hover::after {
 
     transition: 0.3s ease;
 }
+
