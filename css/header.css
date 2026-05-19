@@ -33,6 +33,11 @@ header {
     top: 0;
 
     z-index: 1000;
+    
+}
+
+header.hide {
+  transform: translateY(-100%);
 }
 
 header.scrolled {
@@ -47,7 +52,8 @@ header.scrolled {
     transition:
         padding 0.3s ease,
         background 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        backdrop-filter 0.3s ease;
 }
 
 

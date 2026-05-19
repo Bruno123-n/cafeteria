@@ -179,6 +179,7 @@ html {
         transform 0.8s ease;
 }
 
+
 .reveal.active {
     opacity: 1;
 
@@ -237,4 +238,44 @@ html {
     transition: 0.3s ease;
 
     z-index: 998;
+}
+
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.modal-box{
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+
+    width: 300px;
+
+    transform: scale(0.8);
+
+    transition: 0.3s;
+}
+
+
+.modal-overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.modal-overlay.active .modal-box{
+    transform: scale(1);
 }
