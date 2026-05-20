@@ -44,7 +44,8 @@ body {
 
     transform: translateY(-4px);
 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow:
+        0 0 20px rgba(214,185,140,.5);
 }
 
 .btn-secondary {
@@ -240,52 +241,71 @@ html {
     z-index: 998;
 }
 
-.modal-overlay{
+
+.modal-box{
+    background: white;
+
+    padding: 2rem;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    width: 90%;
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    transform: scale(0.8);
+
+    opacity: 0;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.modal{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 1rem;
-    overflow-y: auto;
+
+    background: rgba(0,0,0,.6);
+
+    backdrop-filter: blur(4px);
 
     opacity: 0;
     pointer-events: none;
 
-    transition: 0.3s;
+    transition: opacity .3s ease;
 
-    z-index: 9999;
+    z-index: 2000;
 }
 
-.modal-box{
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    box-sizing: border-box;
-    width: 90%;
-    max-width: 500px;
-    /* max-height: 90vh; */
-    /* overflow-y: auto; */
-    transform: scale(0.8);
-
-    transition: 0.3s;
-}
-
-
-.modal-overlay.active{
+.modal.active{
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
 }
 
+.modal.active .modal-box{
 
-.modal-overlay.active .modal-box{
     transform: scale(1);
+    opacity: 1;
+
 }
 
 .modal-form{
