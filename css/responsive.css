@@ -12,38 +12,31 @@
         padding: 20px;
     }
 
-        /* flex-wrap: wrap; */
-/* 
-        justify-content: center; */
-
-        /* gap: 15px; */
-
-        /* text-align: center; */
-
-
     nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
 
         width: 250px;
         height: 100vh;
 
         background: #111;
 
+        display: flex;
         flex-direction: column;
 
         padding-top: 100px;
 
-        transition: 0.3s ease;
+        transform: translateX(100%);
+        transition: transform .3s ease;
 
         z-index: 999;
     }
 
     nav.active {
-        right: 0;
+        transform: translateX(0);
     }
-
+    
     h1.logo{
         min-width: 40px;
 
@@ -149,4 +142,29 @@
         pointer-events: auto;
     }
 
+   .modal-box{
+
+        width: 95%;
+
+        padding: 1.5rem;
+
+        height: auto;
+
+    }
+
+    .modal-box h2{
+
+        font-size: 2rem;
+        line-height: 1.1;
+
+        overflow-wrap: break-word;
+
+    }
+
+    .modal-box input, 
+    .modal-box button {
+        padding: 0.6rem;
+        width: 100%;    
+
+    }
 }

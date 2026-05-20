@@ -335,9 +335,28 @@
                 Faça sua reserva ☕
             </h2>
 
-            <p>
-                Entre em contato conosco para reservar sua mesa.
-            </p>
+            <form id="formReserva" class="modal-form">
+
+                <input
+                    id="nome" 
+                    type="text" 
+                    placeholder="Seu nome"
+                >
+
+                <input
+                    id="telefone"
+                    type="tel" 
+                    placeholder="Seu telefone"
+                >
+
+                <p id="mensagemErro" class="mensagem-erro"></p>
+
+                <button type="submit">
+                    Reservar
+                </button>
+
+
+            </form>
 
             <button id="closeModal">
                 Fechar

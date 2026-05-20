@@ -1,8 +1,9 @@
-const sections =
-document.querySelectorAll('section');
+(() => {
 
-const navLinks =
-document.querySelectorAll('nav a');
+    
+const sections = document.querySelectorAll('section');
+
+const navLinks = document.querySelectorAll('nav a');
 
 window.addEventListener('scroll', () => {
 
@@ -45,3 +46,5 @@ window.addEventListener('scroll', () => {
 
     }
 );
+
+})();
