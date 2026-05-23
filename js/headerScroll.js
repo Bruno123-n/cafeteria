@@ -16,22 +16,33 @@ window.addEventListener('scroll', () => {
 );
 
 
+(() => {
+
 let lastScroll = 0;
 
 window.addEventListener("scroll", () => {
 
-  const currentScroll = window.scrollY;
+    const currentScroll = window.pageYOffset;
 
-  if (currentScroll > lastScroll) {
+    // topo da página
+    if(currentScroll <= 0){
+        header.classList.remove("hide");
+        return;
+    }
 
-    header.classList.add("hide");
+    // descendo
+    if(currentScroll > lastScroll){
 
-  } else {
+        header.classList.add("hide");
 
-    header.classList.remove("hide");
+    } else {
 
-  }
+        header.classList.remove("hide");
 
-  lastScroll = currentScroll;
+    }
+
+    lastScroll = currentScroll;
 
 });
+
+})();

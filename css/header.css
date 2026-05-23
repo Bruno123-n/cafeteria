@@ -1,5 +1,5 @@
 .logo {
-    font-size: 32px;
+    font-size: clamp(2rem, 5vw, 3rem);
 
     font-weight: bold;
 
@@ -28,11 +28,17 @@ header {
 
     background: rgba(10,10,10,0.7);
 
-    position: sticky;
+    width: 100%;
+
+
+    position: fixed;
 
     top: 0;
 
     z-index: 1000;
+
+    transition:
+        transform .3s ease;
     
 }
 
@@ -62,7 +68,7 @@ nav {
 
     align-items: center;
 
-    gap: 20px;
+    gap: 30px;
 }
 
 nav a {

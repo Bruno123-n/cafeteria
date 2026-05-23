@@ -58,3 +58,11 @@
     color: #cfcfcf;
 }
 
+.card img{
+    transition: transform .4s ease;
+}
+
+.card:hover img{
+    transform: scale(1.05);
+}
+
