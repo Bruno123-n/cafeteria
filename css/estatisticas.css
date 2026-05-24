@@ -10,6 +10,8 @@
 
 .estatistica {
 
+    position: relative;
+
     background: #1b1b1b;
 
     border: 1px solid rgba(255,255,255,0.05);
@@ -21,6 +23,28 @@
     text-align: center;
 
     transition: 0.3s ease;
+}
+
+.estatisticas::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background:
+        rgba(214,185,140,.08);
+
+    filter: blur(120px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
 }
 
 .estatistica:hover {
@@ -36,7 +60,7 @@
 
 .estatistica h3 {
 
-    font-size: 52px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
 
     color: var(--cor-secundaria);
 
@@ -46,4 +70,6 @@
 .estatistica p {
 
     color: #cfcfcf;
+
+    opacity: .75;
 }
