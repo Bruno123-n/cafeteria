@@ -64,6 +64,8 @@
         text-align: center;
 
         justify-content: center;
+
+        min-height: auto;
     }
 
     .hero h2 {

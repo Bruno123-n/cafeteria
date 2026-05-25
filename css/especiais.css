@@ -7,15 +7,27 @@
 .info-galeria h3 */
 
 
-.galeria {
+.galeria{
+
     display: grid;
 
     grid-template-columns:
-    repeat(auto-fit, minmax(280px, 1fr));
+        repeat(auto-fit, minmax(280px, 350px));
+
+    justify-content: center;
 
     gap: 30px;
+}
 
-    margin-top: 50px;
+.item-galeria.hide{
+
+    opacity: 0;
+
+    transform: scale(.9);
+
+    pointer-events: none;
+
+    display: none;
 }
 
 .item-galeria {
@@ -27,7 +39,10 @@
 
     border: 1px solid rgba(255,255,255,0.05);
 
-    transition: 0.4s ease;
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+    
 
     position: relative;
 }

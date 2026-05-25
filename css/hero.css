@@ -1,6 +1,8 @@
 .hero {
     position: relative;
 
+    isolation: isolate;
+
     display: flex;
 
     justify-content: space-between;
@@ -12,6 +14,44 @@
     min-height: 80vh;
 
     flex-wrap: wrap;
+
+    animation:
+        fadeHero .8s ease forwards;
+}
+
+
+@keyframes fadeHero{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.hero::after{
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        rgba(214,185,140,.06);
+
+    filter: blur(120px);
+
+    right: -100px;
+    top: 0;
+
+    z-index: -1;
 }
 
 .hero::before{
@@ -28,7 +68,7 @@
     filter: blur(100px);
 
     top: 10%;
-    
+
     left: -100px;
 
     z-index: -1;
@@ -56,7 +96,25 @@
         transform .5s ease,
         box-shadow .5s ease;
 
-    animation: fadeUp 1.2s ease;
+    animation: 
+        fadeUp 1.2s ease,
+        floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
 }
 
 .hero-imagem img:hover {

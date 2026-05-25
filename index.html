@@ -163,9 +163,25 @@
 
                 <h2>Nossos Especiais</h2>
 
+                <div class="filtros">
+
+                    <button class="filtro-btn active" data-filter="all">
+                        Todos
+                    </button>
+
+                    <button class="filtro-btn" data-filter="cafe">
+                        Cafés
+                    </button>
+
+                    <button class="filtro-btn" data-filter="ambiente">
+                        Ambiente
+                    </button>
+
+                </div>
+
                 <div class="galeria">
 
-                    <div class="item-galeria">
+                    <div class="item-galeria" data-category="cafe">
                         <img src="imagens/download (1).jpg" alt="">
 
                         <div class="info-galeria">
@@ -177,7 +193,7 @@
                         </div>
                     </div>
 
-                    <div class="item-galeria">
+                    <div class="item-galeria" data-category="cafe">
                         <img src="imagens/image..jpg" alt="">
 
                         <div class="info-galeria">
@@ -189,7 +205,7 @@
                         </div>
                     </div>
 
-                    <div class="item-galeria">
+                    <div class="item-galeria" data-category="ambiente">
                         <img src="imagens/images.jpg" alt="">
 
                         <div class="info-galeria">
@@ -210,7 +226,7 @@
 
             <div class="estatistica reveal delay-1">
 
-                <h3>+12k</h3>
+                <h3 class="counter" data-target="12000">0</h3>
 
                 <p>
                     Clientes atendidos
@@ -220,7 +236,7 @@
 
             <div class="estatistica reveal delay-2">
 
-                <h3>98%</h3>
+                <h3 class="counter" data-target="98">0</h3>
 
                 <p>
                     Clientes satisfeitos
@@ -230,7 +246,8 @@
 
             <div class="estatistica reveal delay-3">
 
-                <h3>15+</h3>
+                <h3 class="counter" data-target="15">0</h3>
+
 
                 <p>
                     Tipos de cafés especiais
@@ -371,6 +388,8 @@
     <script src="js/headerScroll.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/counters.js"></script>
+    <script src="js/filterCards.js"></script>
     
 </body>
 </html>
