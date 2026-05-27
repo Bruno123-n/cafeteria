@@ -479,3 +479,40 @@ body{
     box-shadow:
         0 10px 20px rgba(214,185,140,.15);
 }
+
+.busca{
+
+    margin-bottom: 40px;
+}
+
+.busca input{
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 16px 20px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.03);
+
+    color: white;
+
+    outline: none;
+
+    transition: .3s ease;
+}
+
+.busca input:focus{
+
+    border-color:
+        rgba(214,185,140,.4);
+
+    box-shadow:
+        0 0 20px rgba(214,185,140,.08);
+}
