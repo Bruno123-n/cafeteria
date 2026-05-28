@@ -516,3 +516,38 @@ body{
     box-shadow:
         0 0 20px rgba(214,185,140,.08);
 }
+
+.api-cards{
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 320px));
+
+    gap: 30px;
+
+    justify-content: center;
+}
+
+.api-card{
+
+    background:
+        rgba(255,255,255,.03);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    transition: .3s ease;
+}
+
+.api-card:hover{
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(214,185,140,.3);
+}
