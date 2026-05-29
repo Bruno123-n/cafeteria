@@ -2,6 +2,8 @@
 
 const apiCards = document.getElementById("apiCards");
 
+const favoriteCards = document.getElementById("favoriteCards");
+
 const apiSearch = document.getElementById("apiSearch");
 
 let allCoffees = [];
@@ -39,6 +41,8 @@ const getCoffees = async () => {
         allCoffees = data;
 
         renderCards(data);
+
+        renderFavorites();
 
     } catch(error){
 
@@ -113,6 +117,46 @@ const saveFavorite = (id) => {
 
 };
 
+const renderFavorites = () => {
+
+    const favorites =
+        JSON.parse(localStorage.getItem("favorites"))
+        || [];
+
+    const favoriteItems = allCoffees.filter((item) => {
+
+        return favorites.includes(item.id);
+
+    });
+
+    favoriteCards.innerHTML = "";
+
+    favoriteItems.forEach((item) => {
+
+        favoriteCards.innerHTML += `
+
+            <div class="api-card">
+
+                <h3>
+                    ${
+                        item.title.charAt(0).toUpperCase() +
+                        item.title.slice(1)
+                    }
+                </h3>
+
+                <p>
+                    ${item.body.slice(0, 80)}...
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+};
+
 getCoffees();
 
 apiSearch.addEventListener("input", () => {
@@ -141,6 +185,7 @@ document.addEventListener("click", (event) => {
         );
         
         saveFavorite(id);
+        renderFavorites();
         
     }
     
