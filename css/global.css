@@ -572,3 +572,27 @@ body{
 
     outline: none;
 }
+
+.favorite-btn{
+
+    margin-top: 15px;
+
+    padding: 10px 16px;
+
+    background: var(--cor-secundaria);
+
+    color: black;
+
+    font-weight: bold;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.favorite-btn:hover{
+
+    transform: translateY(-2px);
+}

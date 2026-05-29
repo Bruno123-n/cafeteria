@@ -77,11 +77,39 @@ const renderCards = (items) => {
                     ${item.body.slice(0, 80)}...
                 </p>
 
+                <button
+                    class="favorite-btn"
+                    data-id="${item.id}"
+                >
+                    ⭐ Favoritar
+                </button>
+
             </div>
 
         `;
 
     });
+
+};
+
+const saveFavorite = (id) => {
+
+    const favorites =
+        JSON.parse(localStorage.getItem("favorites"))
+        || [];
+
+    if(favorites.includes(id)){
+
+        return;
+
+    }
+
+    favorites.push(id);
+
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
 
 };
 
@@ -101,6 +129,21 @@ apiSearch.addEventListener("input", () => {
 
     renderCards(filtered);
 
+});
+
+
+document.addEventListener("click", (event) => {
+
+    if(event.target.classList.contains("favorite-btn")){
+
+        const id = Number(
+            event.target.dataset.id
+        );
+        
+        saveFavorite(id);
+        
+    }
+    
 });
 
 })();
