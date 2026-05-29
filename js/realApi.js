@@ -2,6 +2,10 @@
 
 const apiCards = document.getElementById("apiCards");
 
+const apiSearch = document.getElementById("apiSearch");
+
+let allCoffees = [];
+
 const getCoffees = async () => {
 
     apiCards.innerHTML = `
@@ -31,6 +35,8 @@ const getCoffees = async () => {
         }
 
         const data = await response.json();
+
+        allCoffees = data;
 
         renderCards(data);
 
@@ -80,5 +86,21 @@ const renderCards = (items) => {
 };
 
 getCoffees();
+
+apiSearch.addEventListener("input", () => {
+
+    const value = apiSearch.value.toLowerCase();
+
+    const filtered = allCoffees.filter((item) => {
+
+        return (
+            item.title.toLowerCase().includes(value)
+        );
+
+    });
+
+    renderCards(filtered);
+
+});
 
 })();
