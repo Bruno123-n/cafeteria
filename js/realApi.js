@@ -64,7 +64,22 @@ const renderCards = (items) => {
 
     apiCards.innerHTML = "";
 
+    const favorites = JSON.parse(localStorage.getItem("favorites"))
+        || [];
+
     items.forEach((item) => {
+
+        const isFavorite = favorites.includes(item.id);
+        const buttonText =
+            isFavorite
+                ? "⭐ Favoritado"
+                : "☆ Favoritar";
+
+                    console.log(
+    item.id,
+    favorites,
+    isFavorite
+);
 
         apiCards.innerHTML += `
 
@@ -82,10 +97,10 @@ const renderCards = (items) => {
                 </p>
 
                 <button
-                    class="favorite-btn"
+                    class="favorite-btn"    
                     data-id="${item.id}"
                 >
-                    ⭐ Favoritar
+                    ${buttonText}
                 </button>
 
             </div>
@@ -211,6 +226,7 @@ document.addEventListener("click", (event) => {
         
         toggleFavorite(id);
         renderFavorites();
+        renderCards(allCoffees);
         
     }
     
