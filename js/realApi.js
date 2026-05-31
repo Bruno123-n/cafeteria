@@ -6,6 +6,9 @@ const favoriteCards = document.getElementById("favoriteCards");
 
 const apiSearch = document.getElementById("apiSearch");
 
+const favoritesTitle = document.getElementById("favoritesTitle");
+
+
 let allCoffees = [];
 
 const getCoffees = async () => {
@@ -161,6 +164,9 @@ const renderFavorites = () => {
     const favorites =
         JSON.parse(localStorage.getItem("favorites"))
         || [];
+
+    favoritesTitle.textContent =
+    `Meus Favoritos (${favorites.length})`;
 
     const favoriteItems = allCoffees.filter((item) => {
 
