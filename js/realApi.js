@@ -96,26 +96,51 @@ const renderCards = (items) => {
 
 };
 
-const saveFavorite = (id) => {
+// const saveFavorite = (id) => {
 
-    const favorites =
+//     const favorites =
+//         JSON.parse(localStorage.getItem("favorites"))
+//         || [];
+
+//     if(favorites.includes(id)){
+
+//         return;
+
+//     }
+
+//     favorites.push(id);
+
+//     localStorage.setItem(
+//         "favorites",
+//         JSON.stringify(favorites)
+//     );
+
+// };
+
+const toggleFavorite = (id) => {
+
+    let favorites =
         JSON.parse(localStorage.getItem("favorites"))
         || [];
 
     if(favorites.includes(id)){
 
-        return;
+        // remover
+        favorites = favorites.filter((numero) => {
+
+        return numero !== id})
+
+    } else {
+
+        // adicionar
+        favorites.push(id);
 
     }
 
-    favorites.push(id);
 
-    localStorage.setItem(
-        "favorites",
-        JSON.stringify(favorites)
-    );
+    localStorage.setItem("favorites", JSON.stringify(favorites));
 
-};
+}
 
 const renderFavorites = () => {
 
@@ -184,7 +209,7 @@ document.addEventListener("click", (event) => {
             event.target.dataset.id
         );
         
-        saveFavorite(id);
+        toggleFavorite(id);
         renderFavorites();
         
     }
