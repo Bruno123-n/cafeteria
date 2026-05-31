@@ -193,6 +193,13 @@ const renderFavorites = () => {
                     ${item.body.slice(0, 80)}...
                 </p>
 
+                <button
+                    class="remove-favorite-btn"
+                    data-id="${item.id}"
+                >
+                    ❌ Remover
+                </button>
+
             </div>
 
         `;
@@ -224,6 +231,22 @@ apiSearch.addEventListener("input", () => {
 document.addEventListener("click", (event) => {
 
     if(event.target.classList.contains("favorite-btn")){
+
+        const id = Number(
+            event.target.dataset.id
+        );
+        
+        toggleFavorite(id);
+        renderFavorites();
+        renderCards(allCoffees);
+        
+    }
+    
+});
+
+document.addEventListener("click", (event) => {
+
+    if(event.target.classList.contains("remove-favorite-btn")){
 
         const id = Number(
             event.target.dataset.id
