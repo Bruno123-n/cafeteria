@@ -596,3 +596,15 @@ body{
 
     transform: translateY(-2px);
 }
+
+.favorite {
+    border: 2px solid gold;
+}
+
+.favorite h3{
+    color: gold;
+}
+
+.favorite button{
+    background: gold;
+}

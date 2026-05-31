@@ -74,16 +74,15 @@ const renderCards = (items) => {
             isFavorite
                 ? "⭐ Favoritado"
                 : "☆ Favoritar";
+        const favoriteClass =
+            isFavorite
+                ? "favorite"
+                : "";
 
-                    console.log(
-    item.id,
-    favorites,
-    isFavorite
-);
 
         apiCards.innerHTML += `
 
-            <div class="api-card">
+            <div class="api-card ${favoriteClass}">
 
                 <h3>
                     ${
