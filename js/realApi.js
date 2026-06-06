@@ -165,16 +165,17 @@ const renderFavorites = () => {
         JSON.parse(localStorage.getItem("favorites"))
         || [];
 
-    favoritesTitle.textContent =
-    `Meus Favoritos (${favorites.length})`;
-
+        
     const favoriteItems = allCoffees.filter((item) => {
-
+        
         return favorites.includes(item.id);
         
     });
+    favoritesTitle.textContent =
+        `Meus Favoritos (${favorites.length})`;
+    
     if ( favoriteItems.length === 0 ) {
-
+ 
         favoriteCards.innerHTML = `
             <p>
                 Nenhum favorito encontrado ☕
