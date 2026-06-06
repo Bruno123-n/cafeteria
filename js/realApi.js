@@ -171,8 +171,18 @@ const renderFavorites = () => {
     const favoriteItems = allCoffees.filter((item) => {
 
         return favorites.includes(item.id);
-
+        
     });
+    if ( favoriteItems.length === 0 ) {
+
+        favoriteCards.innerHTML = `
+            <p>
+                Nenhum favorito encontrado ☕
+            </p>
+        `;
+
+        return;
+    }
 
     favoriteCards.innerHTML = "";
 
