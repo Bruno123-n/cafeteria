@@ -85,7 +85,10 @@ const renderCards = (items) => {
 
         apiCards.innerHTML += `
 
-            <div class="api-card ${favoriteClass}">
+            <div 
+                class="api-card ${favoriteClass}"
+                data-id="${item.id}"
+            >
 
                 <h3>
                     ${
@@ -113,26 +116,17 @@ const renderCards = (items) => {
 
 };
 
-// const saveFavorite = (id) => {
+const openCoffeeModal = (id) => {
 
-//     const favorites =
-//         JSON.parse(localStorage.getItem("favorites"))
-//         || [];
+    const coffee = allCoffees.find((item) => {
 
-//     if(favorites.includes(id)){
+        return item.id === id;
 
-//         return;
+    });
 
-//     }
+    console.log(coffee);
 
-//     favorites.push(id);
-
-//     localStorage.setItem(
-//         "favorites",
-//         JSON.stringify(favorites)
-//     );
-
-// };
+};
 
 const toggleFavorite = (id) => {
 
@@ -270,5 +264,32 @@ document.addEventListener("click", (event) => {
     }
     
 });
+
+document.addEventListener("click", (event) => {
+
+    const card =
+        event.target.closest(".api-card");
+
+    if(card){
+
+        const id = Number(
+            card.dataset.id
+        );
+
+        console.log(id);
+
+        const coffee = allCoffees.find((item) => {
+        
+            return item.id === id;
+        
+        });
+        
+        // console.log(coffee);
+        console.log(coffee.title);
+        console.log(coffee.body);
+    }
+
+});
+
 
 })();
