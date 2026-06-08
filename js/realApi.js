@@ -1,6 +1,8 @@
 (() => {
 const coffeeTitle = document.getElementById("coffeeTitle");
 
+const toast = document.getElementById("toast");
+
 const coffeeBody = document.getElementById("coffeeBody");
 
 const coffeeModal = document.getElementById("coffeeModal"); 
@@ -15,6 +17,22 @@ const apiSearch = document.getElementById("apiSearch");
 
 const favoritesTitle = document.getElementById("favoritesTitle");
 
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add("active");
+
+    setTimeout(() => {
+
+        toast.classList.remove("active")
+        
+
+    }, 1000);
+
+}
+
+//"⭐ Café favoritado"
 
 function openCoffeeModal(coffee){
 
@@ -291,8 +309,9 @@ document.addEventListener("click", (event) => {
         const id = Number(
             event.target.dataset.id
         );
-        
+
         toggleFavorite(id);
+        showToast("⭐ Café favoritado")
         renderFavorites();
         renderCards(allCoffees);
         
@@ -309,6 +328,7 @@ document.addEventListener("click", (event) => {
         );
         
         toggleFavorite(id);
+        showToast("❌ Café removido");
         renderFavorites();
         renderCards(allCoffees);
         

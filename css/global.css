@@ -608,3 +608,22 @@ body{
 .favorite button{
     background: gold;
 }
+
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background: #333;
+    color: white;
+
+    padding: 12px 20px;
+    border-radius: 8px;
+
+    opacity: 0;
+}
+
+#toast.active {
+    opacity: 1;
+    z-index: 9999;
+}
