@@ -1,5 +1,12 @@
 (() => {
+const coffeeTitle = document.getElementById("coffeeTitle");
 
+const coffeeBody = document.getElementById("coffeeBody");
+
+const coffeeModal = document.getElementById("coffeeModal"); 
+
+const closeCoffeeModal = document.getElementById("closeCoffeeModal");
+   
 const apiCards = document.getElementById("apiCards");
 
 const favoriteCards = document.getElementById("favoriteCards");
@@ -7,6 +14,24 @@ const favoriteCards = document.getElementById("favoriteCards");
 const apiSearch = document.getElementById("apiSearch");
 
 const favoritesTitle = document.getElementById("favoritesTitle");
+
+
+function openCoffeeModal(){
+
+    coffeeModal.classList.add("active");
+
+}
+
+function closeCoffeeModalFunction(){
+
+    coffeeModal.classList.remove("active");
+
+}
+
+closeCoffeeModal.addEventListener(
+    "click",
+    closeCoffeeModalFunction
+);
 
 
 let allCoffees = [];
@@ -116,7 +141,7 @@ const renderCards = (items) => {
 
 };
 
-const openCoffeeModal = (id) => {
+const  getCoffeeById = (id) => {
 
     const coffee = allCoffees.find((item) => {
 
@@ -124,7 +149,7 @@ const openCoffeeModal = (id) => {
 
     });
 
-    console.log(coffee);
+    return coffee;
 
 };
 
@@ -185,7 +210,10 @@ const renderFavorites = () => {
 
         favoriteCards.innerHTML += `
 
-            <div class="api-card">
+            <div
+                class="api-card"
+                data-id="${item.id}"
+            >
 
                 <h3>
                     ${
@@ -267,6 +295,14 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
 
+    if(
+        event.target.classList.contains(
+            "remove-favorite-btn"
+        )
+    ){
+        return;
+    }
+
     const card =
         event.target.closest(".api-card");
 
@@ -276,17 +312,23 @@ document.addEventListener("click", (event) => {
             card.dataset.id
         );
 
-        console.log(id);
+        // console.log(id);
 
         const coffee = allCoffees.find((item) => {
         
             return item.id === id;
+
+            
         
         });
-        
+
+        coffeeTitle.textContent = coffee.title;
+        coffeeBody.textContent = coffee.body;
+        openCoffeeModal();
+
         // console.log(coffee);
-        console.log(coffee.title);
-        console.log(coffee.body);
+        // console.log(coffee.title);
+        // console.log(coffee.body);
     }
 
 });
