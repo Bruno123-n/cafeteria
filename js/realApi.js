@@ -16,15 +16,18 @@ const apiSearch = document.getElementById("apiSearch");
 const favoritesTitle = document.getElementById("favoritesTitle");
 
 
-function openCoffeeModal(){
+function openCoffeeModal(coffee){
 
     coffeeModal.classList.add("active");
+    coffeeTitle.textContent = coffee.title;
+    coffeeBody.textContent = coffee.body;
 
 }
 
 function closeCoffeeModalFunction(){
 
     coffeeModal.classList.remove("active");
+    
 
 }
 
@@ -32,6 +35,26 @@ closeCoffeeModal.addEventListener(
     "click",
     closeCoffeeModalFunction
 );
+
+coffeeModal.addEventListener("click", (event) => {
+
+    if(event.target === coffeeModal){
+
+       closeCoffeeModalFunction()
+
+    }
+
+});
+
+document.addEventListener("keydown", (event) => {
+
+    if(event.key === "Escape"){
+
+        closeCoffeeModalFunction()
+
+    }
+
+});
 
 
 let allCoffees = [];
@@ -314,17 +337,8 @@ document.addEventListener("click", (event) => {
 
         // console.log(id);
 
-        const coffee = allCoffees.find((item) => {
-        
-            return item.id === id;
-
-            
-        
-        });
-
-        coffeeTitle.textContent = coffee.title;
-        coffeeBody.textContent = coffee.body;
-        openCoffeeModal();
+        const coffee = getCoffeeById(id);
+        openCoffeeModal(coffee);
 
         // console.log(coffee);
         // console.log(coffee.title);
