@@ -1,4 +1,10 @@
 (() => {
+const prevPage = document.getElementById("prevPage");
+
+const nextPage = document.getElementById("nextPage");
+
+const pageInfo = document.getElementById("pageInfo");
+
 const coffeeTitle = document.getElementById("coffeeTitle");
 
 const toast = document.getElementById("toast");
@@ -16,6 +22,33 @@ const favoriteCards = document.getElementById("favoriteCards");
 const apiSearch = document.getElementById("apiSearch");
 
 const favoritesTitle = document.getElementById("favoritesTitle");
+
+
+let currentPage = 1;
+
+nextPage.addEventListener("click", () => {
+
+    currentPage++;
+
+    getCoffees(currentPage);
+    // console.log(currentPage);
+    // console.log(allCoffees);
+
+});
+
+prevPage.addEventListener("click", () => {
+
+    if(currentPage > 1){
+
+        currentPage--;
+
+        getCoffees(currentPage);
+        // console.log(currentPage);
+        // console.log(allCoffees);
+
+    }
+
+});
 
 function showToast(message){
 
@@ -77,8 +110,17 @@ document.addEventListener("keydown", (event) => {
 
 let allCoffees = [];
 
-const getCoffees = async () => {
+const getCoffees = async (page) => {
 
+    
+    const limit = 6;
+
+    const start = (page - 1) * limit;
+
+    // console.log(page);
+    // console.log(start);
+    pageInfo.textContent = `Página ${page}`;
+    
     apiCards.innerHTML = `
     
         <p class="loading">
@@ -96,7 +138,7 @@ const getCoffees = async () => {
         });
 
         const response = await fetch(
-            "https://jsonplaceholder.typicode.com/posts?_limit=6"
+            `https://jsonplaceholder.typicode.com/posts?_start=${start}&_limit=${limit}`
         );
 
         if(!response.ok){
@@ -280,10 +322,10 @@ const renderFavorites = () => {
 
     });
 
-
 };
 
-getCoffees();
+getCoffees(currentPage);
+
 
 apiSearch.addEventListener("input", () => {
 
