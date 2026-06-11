@@ -1,4 +1,8 @@
 (() => {
+const sortAZ = document.getElementById("sortAZ");
+
+const sortZA = document.getElementById("sortZA");
+
 const prevPage = document.getElementById("prevPage");
 
 const nextPage = document.getElementById("nextPage");
@@ -24,6 +28,44 @@ const apiSearch = document.getElementById("apiSearch");
 const favoritesTitle = document.getElementById("favoritesTitle");
 
 
+
+sortAZ.addEventListener("click", () => {
+
+    allCoffees.sort((a, b) => {
+
+        return a.title.localeCompare(
+            b.title
+        );
+
+    });
+
+    renderCards(allCoffees);
+
+    showToast(
+        "☕ Cafés ordenados de A-Z"
+    );
+
+});
+
+sortZA.addEventListener("click", () => {
+
+    allCoffees.sort((a, b) => {
+
+        return b.title.localeCompare(
+            a.title
+        );
+
+    });
+
+    renderCards(allCoffees);
+
+    showToast(
+        "☕ Cafés ordenados de Z-A"
+    );
+
+});
+
+
 let currentPage = 1;
 
 nextPage.addEventListener("click", () => {
@@ -45,6 +87,7 @@ prevPage.addEventListener("click", () => {
         getCoffees(currentPage);
         // console.log(currentPage);
         // console.log(allCoffees);
+        
 
     }
 
@@ -120,6 +163,7 @@ const getCoffees = async (page) => {
     // console.log(page);
     // console.log(start);
     pageInfo.textContent = `Página ${page}`;
+    
     
     apiCards.innerHTML = `
     
