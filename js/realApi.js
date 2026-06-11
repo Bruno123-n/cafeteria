@@ -408,6 +408,18 @@ apiSearch.addEventListener("input", () => {
 
     });
 
+    if(filtered.length === 0){
+
+        apiCards.innerHTML = `
+            <p>
+                Nenhum café encontrado ☕
+            </p>
+        `;
+
+        return;
+
+    }
+
     renderCards(filtered);
 
 });
