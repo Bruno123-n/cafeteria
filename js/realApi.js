@@ -28,6 +28,9 @@ const apiSearch = document.getElementById("apiSearch");
 const favoritesTitle = document.getElementById("favoritesTitle");
 
 
+let currentSort = "";
+
+
 
 sortAZ.addEventListener("click", () => {
 
@@ -38,6 +41,8 @@ sortAZ.addEventListener("click", () => {
         );
 
     });
+
+    currentSort = "az";
 
     renderCards(allCoffees);
 
@@ -60,6 +65,8 @@ sortZA.addEventListener("click", () => {
         );
 
     });
+
+    currentSort = "za";
 
     renderCards(allCoffees);
 
@@ -218,7 +225,33 @@ const getCoffees = async (page) => {
 
         allCoffees = data;
 
-        renderCards(data);
+        if(currentSort === "az"){
+
+            allCoffees.sort((a, b) => {
+
+                return a.title.localeCompare(
+                    b.title
+                );
+
+            });
+
+        }
+
+        if(currentSort === "za"){
+
+            allCoffees.sort((a, b) => {
+
+                return a.title.localeCompare(
+                    b.title
+                );
+
+            });
+
+        }
+
+        
+
+        renderCards(allCoffees);
 
         renderFavorites();
 
