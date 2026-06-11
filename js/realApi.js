@@ -41,6 +41,10 @@ sortAZ.addEventListener("click", () => {
 
     renderCards(allCoffees);
 
+    sortAZ.classList.add("active-sort");
+
+    sortZA.classList.remove("active-sort");
+
     showToast(
         "☕ Cafés ordenados de A-Z"
     );
@@ -58,6 +62,10 @@ sortZA.addEventListener("click", () => {
     });
 
     renderCards(allCoffees);
+
+    sortZA.classList.add("active-sort");
+
+    sortAZ .classList.remove("active-sort");
 
     showToast(
         "☕ Cafés ordenados de Z-A"
