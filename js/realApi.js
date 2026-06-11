@@ -84,6 +84,7 @@ nextPage.addEventListener("click", () => {
     // console.log(currentPage);
     // console.log(allCoffees);
 
+    updatePaginationButtons()
 });
 
 prevPage.addEventListener("click", () => {
@@ -97,9 +98,24 @@ prevPage.addEventListener("click", () => {
         // console.log(allCoffees);
         
 
+        updatePaginationButtons()
     }
 
 });
+
+function updatePaginationButtons() {
+
+    if(currentPage === 1){
+
+        prevPage.disabled = true;
+
+    }else{
+
+        prevPage.disabled = false;
+
+    }
+
+}
 
 function showToast(message){
 
@@ -377,6 +393,7 @@ const renderFavorites = () => {
 };
 
 getCoffees(currentPage);
+updatePaginationButtons()
 
 
 apiSearch.addEventListener("input", () => {
