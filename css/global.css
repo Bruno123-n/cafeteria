@@ -632,3 +632,7 @@ body{
     background: #8B4513;
     color: white;
 }
+
+.api-results{
+    min-height: 600px;
+}

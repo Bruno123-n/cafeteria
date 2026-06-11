@@ -85,6 +85,7 @@ nextPage.addEventListener("click", () => {
     // console.log(allCoffees);
 
     updatePaginationButtons()
+    
 });
 
 prevPage.addEventListener("click", () => {
@@ -99,6 +100,7 @@ prevPage.addEventListener("click", () => {
         
 
         updatePaginationButtons()
+        
     }
 
 });
@@ -110,25 +112,6 @@ function updatePaginationButtons() {
     const totalPages =
         Math.ceil(100 / limit);
 
-    // if(currentPage === 1){
-
-    //     prevPage.disabled = true;
-        
-
-    // }else{
-
-    //     prevPage.disabled = false;
-
-    // }
-
-    // if(currentPage === totalPages){
-    //     nextPage.disabled =
-    //         true;
-    // }else{
-
-    //     nextPage.disabled = false;
-
-    // }
 
     prevPage.disabled =
         currentPage === 1;
@@ -220,12 +203,6 @@ const getCoffees = async (page) => {
     `;
 
     try {
-
-        await new Promise((resolve) => {
-
-            setTimeout(resolve, 2000);
-
-        });
 
         const response = await fetch(
             `https://jsonplaceholder.typicode.com/posts?_start=${start}&_limit=${limit}`
