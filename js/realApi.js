@@ -105,15 +105,37 @@ prevPage.addEventListener("click", () => {
 
 function updatePaginationButtons() {
 
-    if(currentPage === 1){
+    const limit = 6;
 
-        prevPage.disabled = true;
+    const totalPages =
+        Math.ceil(100 / limit);
 
-    }else{
+    // if(currentPage === 1){
 
-        prevPage.disabled = false;
+    //     prevPage.disabled = true;
+        
 
-    }
+    // }else{
+
+    //     prevPage.disabled = false;
+
+    // }
+
+    // if(currentPage === totalPages){
+    //     nextPage.disabled =
+    //         true;
+    // }else{
+
+    //     nextPage.disabled = false;
+
+    // }
+
+    prevPage.disabled =
+        currentPage === 1;
+
+    nextPage.disabled =
+        currentPage === totalPages;
+    
 
 }
 
